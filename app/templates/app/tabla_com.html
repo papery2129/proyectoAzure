@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "app/base.html" %}
+
+{% load static %}
+{% block body_block %}
+<div class="container">
+<br>
+    {% if coment %}
+        <table class="table table-dark" >
+            <thead>
+                <tr class="table-dark">
+                    <th class="table-dark">Fecha</th>
+                    <th class="table-dark">Nombre</th>
+                    <th class="table-dark">Email</th>
+                    <th class="table-dark">Comentario</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for con in coment %}
+                    <tr class="table-dark">
+                        <td class="table-dark">{{con.fecha}}</td>
+                        <td class="table-dark">{{con.nombre}}</td>
+                        <td class="table-dark">{{con.email}}</td>
+                        <td class="table-dark">{{con.text}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay mejoras constructivas :c</p>
+    {% endif %}
+</div>
+{% endblock %}
